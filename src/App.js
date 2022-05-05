@@ -1,13 +1,15 @@
-
-import './App.css';
+import "./App.css";
+import Header from "./components/mainList/header/Header";
+import List from "./components/mainList/list/List";
+import Adding from "./components/mainList/adding/Adding";
 
 function App() {
   return (
     <div className="App">
-              <h1>MerhabfAASDFDa</h1>
-
-
-  </div>
+      <Header />
+      <Adding />
+      <List />
+    </div>
   );
 }
 
