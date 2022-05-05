@@ -7,7 +7,6 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 
 function createData(name, calories, fat, carbs) {
   return { name, calories, fat, carbs };
@@ -24,14 +23,43 @@ const rows = [
 function List() {
   return (
     <div>
-      <TableContainer component={Paper} sx={{margin: "10px 0px 10px 0px", backgroundColor: "rgb(243, 243, 243)"}}>
-        <Table sx={{ minWidth: 650, border: "1px solid black"}} aria-label="simple table">
+      <TableContainer
+        sx={{
+          margin: "10px 0px 10px 0px",
+          backgroundColor: "rgb(230, 230, 230)",
+        }}
+      >
+        <Table
+          sx={{ minWidth: 650, border: "1px solid black" }}
+          aria-label="simple table"
+        >
           <TableHead>
-            <TableRow sx={{backgroundColor: "rgb(243, 243, 243)",}}>
-              <TableCell sx={{fontSize: "20px", fontWeight: "bold"}} >Kitap Adı</TableCell>
-              <TableCell sx={{fontSize: "20px", fontWeight: "bold"}} align="right">Yazar</TableCell>
-              <TableCell sx={{fontSize: "20px", fontWeight: "bold"}} align="right">Sayfa</TableCell>
-              <TableCell sx={{fontSize: "20px", fontWeight: "bold"}} align="right">İlerleme</TableCell>
+            <TableRow
+              sx={{
+                backgroundColor: "rgb(230, 230, 230)"
+              }}
+            >
+              <TableCell sx={{ fontSize: "20px", fontWeight: "bold" }}>
+                Kitap Adı
+              </TableCell>
+              <TableCell
+                sx={{ fontSize: "20px", fontWeight: "bold" }}
+                align="right"
+              >
+                Yazar
+              </TableCell>
+              <TableCell
+                sx={{ fontSize: "20px", fontWeight: "bold" }}
+                align="right"
+              >
+                Sayfa
+              </TableCell>
+              <TableCell
+                sx={{ fontSize: "20px", fontWeight: "bold" }}
+                align="right"
+              >
+                İlerleme
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
