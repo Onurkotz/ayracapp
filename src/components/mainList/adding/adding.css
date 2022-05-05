@@ -1,19 +1,36 @@
 .main {
-  background-color: rgb(243, 243, 243);
   text-align: center;
-  flex: 1;
 }
 
 input {
-  margin: 20px 10px 20px 10px;
+  margin: 20px 5px 20px 5px;
   padding: 5px;
-  width: 250px;
-  background-color: transparent;
+  width: 300px;
+  background-color: rgb(243, 243, 243);
   border: solid 1px black;
   border-radius: 5px;
   text-align: center;
+  cursor: url("../../../Assets/pen.png") 0 50, auto;
 }
 
 input::placeholder {
   color: black;
+}
+
+/*input:hover{
+  cursor: url("../../../Assets/Pen.png"), auto;
+}
+**/
+button{
+  width: 500px;
+  height: 30px;
+  background-color: rgb(195, 195, 248);
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: url("../../../Assets/cursor.gif") 0 50, auto;
+  
+}
+
+button:hover{
+  background-color: rgb(166, 166, 248);
 }
