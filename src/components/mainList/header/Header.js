@@ -5,10 +5,10 @@ function Header() {
   return (
     <div>
       <div className="theme">
-      <h1>KİTABIM</h1>
+      KİTABIM
       </div>
     </div>
   )
 }
 
-export default Header
+export default React.memo(Header);
