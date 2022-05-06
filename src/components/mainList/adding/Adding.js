@@ -21,16 +21,21 @@ function Adding() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (bookName === "" || author === "" || page === "" || genre === ""){
-      alert("Girişler boş bırakılamaz.")
+    const space = () => {
+      setBookName("");
+      setAuthor("");
+      setGenre("");
+      setPage("");
+    };
+    if (bookName === "" || author === "" || page === "" || genre === "") {
+      alert("Girişler boş bırakılamaz.");
+      space();
+
       return false;
     }
-    
+
     dispatch(addList({ id: nanoid(), bookName, author, page, genre }));
-    setBookName("");
-    setAuthor("");
-    setGenre("");
-    setPage("");
+    space();
   };
 
   return (
