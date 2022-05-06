@@ -18,7 +18,11 @@ export const listSlice = createSlice({
       },
     ],
   },
-  reducers: {},
+  reducers: {
+    addList: (state, action) => {
+      state.items.push(aciton.payload);
+    },
+  },
 });
 
 export default listSlice.reducer;

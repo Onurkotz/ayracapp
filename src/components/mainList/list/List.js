@@ -80,20 +80,3 @@ function List() {
 }
 
 export default List;
-
-
-/*  {items.map((item) => (
-              <TableRow
-                key={item.id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {item.book}
-                </TableCell>
-                <TableCell align="right">{item.author}</TableCell>
-                <TableCell align="right">{item.page}</TableCell>
-                <TableCell align="right">sadfas</TableCell>
-              </TableRow>
-            ))}
-
-            */
