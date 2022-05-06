@@ -1,5 +1,6 @@
 import React from "react";
 import "./list.css";
+import {useSelector} from "react-redux";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -8,19 +9,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
-function createData(name, calories, fat, carbs) {
-  return { name, calories, fat, carbs };
-}
 
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24),
-  createData("Ice cream sandwich", 237, 9.0, 37),
-  createData("Eclair", 262, 16.0, 24),
-  createData("Cupcake", 305, 3.7, 67),
-  createData("Gingerbread", 356, 16.0, 49),
-];
 
 function List() {
+
+  const items = useSelector((state) => state.bookList.items);
+  console.log(items);
+  
+  
   return (
     <div>
       <TableContainer
@@ -52,28 +48,28 @@ function List() {
                 sx={{ fontSize: "20px", fontWeight: "bold" }}
                 align="right"
               >
-                Sayfa
+                Sayfa Sayısı
               </TableCell>
               <TableCell
                 sx={{ fontSize: "20px", fontWeight: "bold" }}
                 align="right"
               >
-                İlerleme
+                İlerleme Durmu
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+          {items.map((item) => (
               <TableRow
-                key={row.name}
+                key={item.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.name}
+                  {item.bookName}
                 </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
+                <TableCell align="right">{item.author}</TableCell>
+                <TableCell align="right">{item.page}</TableCell>
+                <TableCell align="right">sadfas</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -84,3 +80,20 @@ function List() {
 }
 
 export default List;
+
+
+/*  {items.map((item) => (
+              <TableRow
+                key={item.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {item.book}
+                </TableCell>
+                <TableCell align="right">{item.author}</TableCell>
+                <TableCell align="right">{item.page}</TableCell>
+                <TableCell align="right">sadfas</TableCell>
+              </TableRow>
+            ))}
+
+            */
