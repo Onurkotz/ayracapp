@@ -6,3 +6,7 @@ export const store = configureStore({
     bookList: bookListReducer,
   },
 });
+
+
+
+// throttle

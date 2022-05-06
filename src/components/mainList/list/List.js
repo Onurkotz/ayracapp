@@ -54,6 +54,12 @@ function List() {
                 sx={{ fontSize: "20px", fontWeight: "bold" }}
                 align="right"
               >
+                Tür
+              </TableCell>
+              <TableCell
+                sx={{ fontSize: "20px", fontWeight: "bold" }}
+                align="right"
+              >
                 İlerleme Durmu
               </TableCell>
             </TableRow>
@@ -69,7 +75,8 @@ function List() {
                 </TableCell>
                 <TableCell align="right">{item.author}</TableCell>
                 <TableCell align="right">{item.page}</TableCell>
-                <TableCell align="right">sadfas</TableCell>
+                <TableCell align="right">{item.genre}</TableCell>
+                <TableCell align="right">İlerleme Çubuğu</TableCell>
               </TableRow>
             ))}
           </TableBody>

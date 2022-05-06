@@ -9,20 +9,23 @@ export const listSlice = createSlice({
         bookName: "Suç ve Ceza",
         author: "Dostoyevski",
         page: 650,
+        genre: "Roman",
       },
       {
         id: "2",
         bookName: "Zorba",
         author: "Nikos Kazancakis",
         page: 325,
+        genre: "Roman",
       },
     ],
   },
   reducers: {
     addList: (state, action) => {
-      state.items.push(aciton.payload);
+      state.items.push(action.payload);
     },
   },
 });
 
+export const { addList } = listSlice.actions;
 export default listSlice.reducer;
