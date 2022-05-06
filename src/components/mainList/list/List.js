@@ -1,6 +1,7 @@
 import React from "react";
 import "./list.css";
-import {useSelector} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteItem } from "../../../redux/listSlice/listSlice";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -8,15 +9,20 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-
-
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function List() {
-
   const items = useSelector((state) => state.bookList.items);
   console.log(items);
-  
-  
+
+  const dispatch = useDispatch();
+
+  const deleteBook = (id) => {
+    if (window.confirm("Emin misiniz?")) {
+      dispatch(deleteItem(id));
+    }
+  };
+
   return (
     <div>
       <TableContainer
@@ -32,7 +38,7 @@ function List() {
           <TableHead>
             <TableRow
               sx={{
-                backgroundColor: "rgb(230, 230, 230)"
+                backgroundColor: "rgb(230, 230, 230)",
               }}
             >
               <TableCell sx={{ fontSize: "20px", fontWeight: "bold" }}>
@@ -62,10 +68,16 @@ function List() {
               >
                 İlerleme Durmu
               </TableCell>
+              <TableCell
+                sx={{ fontSize: "20px", fontWeight: "bold" }}
+                align="right"
+              >
+                Sil
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-          {items.map((item) => (
+            {items.map((item) => (
               <TableRow
                 key={item.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -77,6 +89,12 @@ function List() {
                 <TableCell align="right">{item.page}</TableCell>
                 <TableCell align="right">{item.genre}</TableCell>
                 <TableCell align="right">İlerleme Çubuğu</TableCell>
+                <TableCell align="right">
+                  <DeleteIcon
+                    className="delete"
+                    onClick={() => deleteBook(item.id)}
+                  />
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

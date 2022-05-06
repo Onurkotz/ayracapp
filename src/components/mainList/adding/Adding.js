@@ -20,6 +20,12 @@ function Adding() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (bookName === "" || author === "" || page === "" || genre === ""){
+      alert("Girişler boş bırakılamaz.")
+      return false;
+    }
+    
     dispatch(addList({ id: nanoid(), bookName, author, page, genre }));
     setBookName("");
     setAuthor("");
