@@ -3,6 +3,8 @@ import "./list.css";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteItem } from "../../../redux/listSlice/listSlice";
 
+import ProgressBar from "../progressbar/ProgressBar";
+
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -13,9 +15,19 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import { Link } from "react-router-dom";
 
+import {bookListSelector} from "../../../redux/listSlice/listSlice";
+
 function List() {
   const items = useSelector((state) => state.bookList.items);
 
+
+
+
+ /* const [readed, setReaded] = useState("")
+
+  const handleReaded = () => {
+
+  }*/
 
   const dispatch = useDispatch();
 
@@ -84,7 +96,7 @@ function List() {
                 key={item.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <Link to={`/${item.id}`}>
+                <Link to={`/think/${item.id}`}>
                   <TableCell component="th" scope="row">
                     {item.bookName}
                   </TableCell>
@@ -92,7 +104,9 @@ function List() {
                 <TableCell align="right">{item.author}</TableCell>
                 <TableCell align="right">{item.page}</TableCell>
                 <TableCell align="right">{item.genre}</TableCell>
-                <TableCell align="right">İlerleme Çubuğu</TableCell>
+                <TableCell align="right">
+                  <ProgressBar readed="165" page={item.page} />
+                </TableCell>
                 <TableCell align="right">
                   <DeleteIcon
                     className="delete"
