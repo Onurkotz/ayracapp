@@ -11,6 +11,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+import { Link } from "react-router-dom";
+
 function List() {
   const items = useSelector((state) => state.bookList.items);
   console.log(items);
@@ -82,9 +84,11 @@ function List() {
                 key={item.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
-                  {item.bookName}
-                </TableCell>
+                <Link to={`/${item.id}`}>
+                  <TableCell component="th" scope="row">
+                    {item.bookName}
+                  </TableCell>
+                </Link>
                 <TableCell align="right">{item.author}</TableCell>
                 <TableCell align="right">{item.page}</TableCell>
                 <TableCell align="right">{item.genre}</TableCell>

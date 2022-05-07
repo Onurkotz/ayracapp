@@ -1,16 +1,24 @@
 import "./App.css";
 import Header from "./components/mainList/header/Header";
-import List from "./components/mainList/list/List";
-import Adding from "./components/mainList/adding/Adding";
+import Home from "./components/mainList/home/Home"
+import About from "./components/aboutList/About";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Adding />
-      <List />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} exact />
+          <Route path="/:id" element={<About />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
 
 export default App;
+
+// 
