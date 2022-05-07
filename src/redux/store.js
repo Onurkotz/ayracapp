@@ -3,7 +3,7 @@ import bookListReducer from "./listSlice/listSlice";
 import aboutReducer from "./aboutSlice/aboutSlice";
 
 import throttle from "lodash/throttle";
-import { saveState, loadState } from "./localStorage";
+import { saveState, loadState } from "./localStorage/localStorage";
 
 const preloadedState = loadState();
 

@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteThink } from "../../../../redux/aboutSlice/aboutSlice";
 
+import "./list.css";
+
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function ListDraft() {
@@ -18,18 +20,20 @@ function ListDraft() {
   };
 
   return (
-    <div>
-      <ul>
+    <div className="container">
+      <ol>
         {items.map((item) => (
-          <ul key={item.id}>
+          <li key={item.id}>
             {item.think}
+            <span>
             <DeleteIcon
               className="delete"
               onClick={() => handleDelete(item.id)}
             />
-          </ul>
+            </span>
+          </li>
         ))}
-      </ul>
+      </ol>
     </div>
   );
 }

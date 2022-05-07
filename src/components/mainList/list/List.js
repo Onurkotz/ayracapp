@@ -15,19 +15,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import { Link } from "react-router-dom";
 
-import {bookListSelector} from "../../../redux/listSlice/listSlice";
 
 function List() {
   const items = useSelector((state) => state.bookList.items);
 
-
-
-
- /* const [readed, setReaded] = useState("")
-
-  const handleReaded = () => {
-
-  }*/
 
   const dispatch = useDispatch();
 
