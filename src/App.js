@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/mainList/header/Header";
 import Home from "./components/mainList/home/Home"
-import About from "./components/aboutList/About";
+import About from "./components/aboutList/aboutHome/About";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 

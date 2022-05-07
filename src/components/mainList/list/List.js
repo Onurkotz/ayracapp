@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 function List() {
   const items = useSelector((state) => state.bookList.items);
-  console.log(items);
+
 
   const dispatch = useDispatch();
 
