@@ -7,3 +7,13 @@ html, body{
 	vertical-align: baseline;
 	background-color: rgb(226, 222, 222);
 }
+
+.darkMode{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	background-color: rgb(116, 110, 110);
+}

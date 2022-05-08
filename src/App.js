@@ -1,14 +1,19 @@
 import "./App.css";
 import Header from "./components/mainList/header/Header";
-import Home from "./components/mainList/home/Home"
+import Home from "./components/mainList/home/Home";
 import About from "./components/aboutList/aboutHome/about/About";
-import Goal from "./components/goal/home/Goal"
+import Goal from "./components/goal/home/Goal";
+import DarkMode from "./components/darkMode/DarkMode";
+import { useSelector } from "react-redux";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+  const dark = useSelector((state) => state.dark.checked);
+
   return (
-    <div className="App">
+    <div className={dark === false ? "" : "darkMode"}>
+      <DarkMode />
       <Header />
       <Router>
         <Routes>
@@ -23,4 +28,4 @@ function App() {
 
 export default App;
 
-// 
+//
