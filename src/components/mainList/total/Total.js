@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 
 import "./total.css";
 
+import FlagRoundedIcon from '@mui/icons-material/FlagRounded';
+
 function Total() {
   const items = useSelector((state) => state.bookList.items);
 
   return (
     <div className="totalMain">
-      <Link to="./">Hedef Kitap Listem</Link>
+      <FlagRoundedIcon sx={{color: "red", margin: "-3px"}}/>
+      <Link className="link" to="/myGoals">Hedef Kitap Listem</Link>
       <span> Kaç kitabım var: {items.length} </span>
     </div>
   );
