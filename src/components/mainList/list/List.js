@@ -3,7 +3,7 @@ import "./list.css";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteItem } from "../../../redux/listSlice/listSlice";
 
-import ProgressBar from "../progressbar/ProgressBar";
+import ProgressBar from "./progressbar/ProgressBar";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -18,7 +18,6 @@ import { Link } from "react-router-dom";
 
 function List() {
   const items = useSelector((state) => state.bookList.items);
-
 
   const dispatch = useDispatch();
 
