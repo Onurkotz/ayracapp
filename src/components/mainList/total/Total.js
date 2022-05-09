@@ -9,10 +9,18 @@ import FlagRoundedIcon from "@mui/icons-material/FlagRounded";
 function Total() {
   const items = useSelector((state) => state.bookList.items);
 
+  const dark = useSelector((state) => state.dark.checked);
+
   return (
     <div className="totalMain">
-      <FlagRoundedIcon sx={{ color: "red", margin: "-3px" }} />
-      <Link className="link" to="/myGoals">
+      <FlagRoundedIcon
+        sx={
+          dark === false
+            ? { color: "red", margin: "-3px" }
+            : { color: "purple", margin: "-3px" }
+        }
+      />
+      <Link className={dark === false ? "link" : "darkLink"} to="/myGoals">
         Hedef Kitap Listem
       </Link>
 

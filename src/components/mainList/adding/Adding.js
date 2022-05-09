@@ -45,49 +45,49 @@ function Adding() {
       <div className="main">
         <form onSubmit={handleSubmit}>
           <Input
-            sx={{ margin: "15px", width: "300px" }}
+            sx={dark === false ? { margin: "15px", width: "300px" }: {margin: "15px", width: "300px", color: "white"}}
             name="bookName"
             value={bookName}
             placeholder="Kitap Adı"
             startAdornment={
               <InputAdornment position="start">
-                <MenuBookTwoToneIcon />
+                <MenuBookTwoToneIcon sx={dark === false ? "" : { color: "rgb(190, 190, 190)"}} />
               </InputAdornment>
             }
             onChange={(e) => setBookName(e.target.value)}
           />
           <Input
-            sx={{ margin: "15px", width: "300px" }}
+            sx={dark === false ? { margin: "15px", width: "300px" }: {margin: "15px", width: "300px", color: "white"}}
             name="author"
             value={author}
             placeholder="Yazar"
             startAdornment={
               <InputAdornment position="start">
-                <ModeEditOutlineTwoToneIcon />
+                <ModeEditOutlineTwoToneIcon sx={dark === false ? "" : { color: "rgb(190, 190, 190)"}} />
               </InputAdornment>
             }
             onChange={(e) => setAuthor(e.target.value)}
           />
           <Input
-            sx={{ margin: "15px", width: "300px" }}
+            sx={dark === false ? { margin: "15px", width: "300px" }: {margin: "15px", width: "300px", color: "white"}}
             name="genre"
             value={genre}
             placeholder="Tür"
             startAdornment={
               <InputAdornment position="start">
-                <ArticleIcon />
+                <ArticleIcon sx={dark === false ? "" : { color: "rgb(190, 190, 190)"}} />
               </InputAdornment>
             }
             onChange={(e) => setGenre(e.target.value)}
           />
           <Input
-            sx={{ margin: "15px", width: "300px" }}
+            sx={dark === false ? { margin: "15px", width: "300px" }: {margin: "15px", width: "300px", color: "white"}}
             name="page"
             placeholder="Sayfa Sayısı"
             value={page}
             startAdornment={
               <InputAdornment position="start">
-                <Filter4Icon />
+                <Filter4Icon sx={dark === false ? "" : { color: "rgb(190, 190, 190)"}} />
               </InputAdornment>
             }
             onChange={(e) => setPage(e.target.value)}

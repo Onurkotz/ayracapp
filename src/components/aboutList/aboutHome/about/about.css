@@ -4,6 +4,12 @@
   margin-left: -5px;
 }
 
+.darkLink {
+  color: rgb(190, 190, 190);
+  padding: 10px;
+}
+
+
 .about {
   
   font-size: 20px;

@@ -6,10 +6,11 @@ import "./totalGoal.css";
 
 function TotalGoal() {
   const items = useSelector((state) => state.myGoals.items);
+  const dark = useSelector((state) => state.dark.checked);
 
   return (
     <div className="totalGoal">
-      <Link className="link" to="/">
+      <Link className={dark === false ? "link" : "linkDark"} to="/">
         Geri Dön
       </Link>
       <span>

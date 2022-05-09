@@ -9,16 +9,6 @@ html, body{
 }
 
 .darkMode{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-	background-color: rgb(116, 110, 110);
+	background-color: rgb(90, 90, 90);
 	color:rgb(190, 190, 190);
 }
-
-
-
-/* dark mode text color: rgb(190, 190, 190)       */

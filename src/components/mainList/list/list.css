@@ -1,3 +1,11 @@
-.delete{
-    cursor:pointer;
+.delete {
+  cursor: pointer;
+}
+
+a {
+  color: black;
+}
+
+.darka {
+  color: rgb(190, 190, 190);
 }

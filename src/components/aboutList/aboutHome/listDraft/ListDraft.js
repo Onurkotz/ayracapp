@@ -8,6 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 function ListDraft() {
   const items = useSelector((state) => state.about.items);
+  const dark = useSelector((state) => state.dark.checked);
 
   const dispatch = useDispatch();
 
@@ -21,12 +22,13 @@ function ListDraft() {
 
   return (
     <div className="container">
-      <ol>
+      <ol className={dark === false ? "" :  "darkol"}>
         {items.map((item) => (
           <li key={item.id}>
             {item.think}
             <span>
             <DeleteIcon
+            sx={dark === false ? {color: "red"} : {color: "purple"}}
               className="delete"
               onClick={() => handleDelete(item.id)}
             />

@@ -15,7 +15,7 @@ function DarkMode() {
 
   const [checked, setChecked] = useState(false);
 
-  const dark = useSelector((state) => state.dark.isChecked);
+  const dark = useSelector((state) => state.dark.checked);
 
   return (
     <div className="dark">
@@ -27,11 +27,11 @@ function DarkMode() {
                 color="primary"
                 checked={checked}
                 onChange={(e) => setChecked(e.target.checked)}
-                onClick={() => dispatch(check({checked: true}))}
+                onClick={() => dispatch(check({ checked: true }))}
                 name="checked"
               />
             }
-            label="Karanlık Mod"
+            label={dark === false ? "Karanlık Mod" : "Açık Mod"}
             labelPlacement="start"
           />
         </FormGroup>

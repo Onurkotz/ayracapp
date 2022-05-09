@@ -1,12 +1,17 @@
-.totalMain{
-    padding: 15px;
-    font-size: 20px;
-    margin-bottom: -20px;
-    margin-top: 10px;
+.totalMain {
+  padding: 15px;
+  font-size: 20px;
+  margin-bottom: -20px;
+  margin-top: 10px;
 }
 
-.link{
-    text-decoration: none;
-    color: blue;
-    padding: 10px;
+.link {
+  text-decoration: none;
+  color: blue;
+  padding: 10px;
+}
+
+.darkLink {
+  color: rgb(190, 190, 190);
+  padding: 10px;
 }

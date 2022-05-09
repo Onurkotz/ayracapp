@@ -6,14 +6,6 @@ input {
   cursor: url("../../../Assets/pen.png") 0 50, auto;
 }
 
-input::placeholder {
-  color: rgb(116, 115, 115);
-}
-
-input:hover{
-  border: none;
-}
-
 
 button{
   width: 500px;
@@ -29,36 +21,19 @@ button:hover{
   background-color: rgb(166, 166, 248);
 }
 
-
-.main {
-  text-align: center;
-}
-
-.darkInput {
-  cursor: url("../../../Assets/pen.png") 0 50, auto;
-}
-
-.darkInput::placeholder {
-  color: rgb(248, 240, 240);
-}
-
-.darkInput:hover{
-  border: none;
-}
-
-
 .darkButton{
   width: 500px;
   height: 30px;
-  background-color: rgb(95, 95, 248);
+  background-color: rgb(175, 71, 175);
   border-radius: 5px;
   border: 1px solid black;
   cursor: url("../../../Assets/cursor.gif") 0 50, auto;
   font-size: 17px;
+  color: rgb(190, 190, 190);
 }
 
 .darkButton:hover{
-  background-color: rgb(31, 31, 255);
+  background-color: rgb(0, 0, 255);
 }
 
 

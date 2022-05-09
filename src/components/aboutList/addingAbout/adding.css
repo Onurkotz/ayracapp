@@ -6,15 +6,6 @@ input {
   cursor: url("../../../Assets/pen.png") 0 50, auto;
 }
 
-input::placeholder {
-  color: rgb(116, 115, 115);
-}
-
-input:hover{
-  border: none;
-  background-color: rgb(218, 216, 216);
-}
-
 
 button{
   width: 500px;
@@ -29,3 +20,22 @@ button{
 button:hover{
   background-color: rgb(166, 166, 248);
 }
+
+.darkButton{
+  width: 500px;
+  height: 30px;
+  background-color: rgb(175, 71, 175);
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: url("../../../Assets/cursor.gif") 0 50, auto;
+  font-size: 17px;
+  color: rgb(190, 190, 190);
+}
+
+.darkButton:hover{
+  background-color: rgb(0, 0, 255);
+}
+
+
+
+

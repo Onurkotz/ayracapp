@@ -13,6 +13,14 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 function List() {
   const items = useSelector((state) => state.myGoals.items);
+  const dark = useSelector((state) => state.dark.checked);
+
+  const darkMode = {
+    fontSize: "20px",
+    fontWeight: "bold",
+    color: "rgb(190, 190, 190)",
+  };
+  const ligthMode = { fontSize: "20px", fontWeight: "bold" };
 
   const dispatch = useDispatch();
 
@@ -25,32 +33,48 @@ function List() {
   return (
     <div>
       <TableContainer
-        sx={{
-          margin: "10px 0px 10px 0px",
-          backgroundColor: "rgb(230, 230, 230)",
-        }}
+        sx={
+          dark === false
+            ? {
+                margin: "10px 0px 10px 0px",
+                backgroundColor: "rgb(230, 230, 230)",
+              }
+            : {
+                margin: "10px 0px 10px 0px",
+                backgroundColor: "rgb(110, 110, 110)",
+              }
+        }
       >
         <Table
-          sx={{ minWidth: 650, border: "1px solid black" }}
+          sx={{
+            minWidth: 650,
+            border: "1px solid black",
+            borderTop: "2px solid black",
+          }}
           aria-label="simple table"
         >
           <TableHead>
             <TableRow
-              sx={{
-                backgroundColor: "rgb(230, 230, 230)",
-              }}
+              sx={
+                dark === false
+                  ? {
+                      backgroundColor: "rgb(230, 230, 230)",
+                    }
+                  : {
+                      backgroundColor: "rgb(110, 110, 110)",
+                    }}
             >
-              <TableCell sx={{ fontSize: "20px", fontWeight: "bold" }}>
+              <TableCell sx={dark === false ? ligthMode : darkMode}>
                 Kitap Adı
               </TableCell>
               <TableCell
-                sx={{ fontSize: "20px", fontWeight: "bold" }}
+                sx={dark === false ? ligthMode : darkMode}
                 align="left"
               >
                 Yazar
               </TableCell>
               <TableCell
-                sx={{ fontSize: "20px", fontWeight: "bold" }}
+                sx={dark === false ? ligthMode : darkMode}
                 align="right"
               >
                 Sil
@@ -63,13 +87,13 @@ function List() {
                 key={item.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
+                <TableCell sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }} component="th" scope="row">
                   {item.goalName}
                 </TableCell>
 
-                <TableCell align="left">{item.goalAuthor}</TableCell>
+                <TableCell sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }} align="left">{item.goalAuthor}</TableCell>
 
-                <TableCell align="right">
+                <TableCell sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }} align="right">
                   <DeleteIcon
                     className="delete"
                     onClick={() => deleteBook(item.id)}
