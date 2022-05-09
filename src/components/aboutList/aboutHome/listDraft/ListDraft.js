@@ -22,16 +22,16 @@ function ListDraft() {
 
   return (
     <div className="container">
-      <ol className={dark === false ? "" :  "darkol"}>
+      <ol className={dark === false ? "" : "darkol"}>
         {items.map((item) => (
           <li key={item.id}>
             {item.think}
             <span>
-            <DeleteIcon
-            sx={dark === false ? {color: "red"} : {color: "purple"}}
-              className="delete"
-              onClick={() => handleDelete(item.id)}
-            />
+              <DeleteIcon
+                sx={dark === false ? { color: "red" } : { color: "purple" }}
+                className="delete"
+                onClick={() => handleDelete(item.id)}
+              />
             </span>
           </li>
         ))}

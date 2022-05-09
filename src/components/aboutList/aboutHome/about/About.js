@@ -1,7 +1,7 @@
 import React from "react";
 //import {useParams} from "react-router-dom";
 import { Link } from "react-router-dom";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 
 import AddingAbout from "../../addingAbout/Adding";
 import ListDraft from "../listDraft/ListDraft";

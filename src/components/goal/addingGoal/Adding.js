@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./adding.css";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { addGoal } from "../../../redux/goalSlice/goalSlice";
 
@@ -39,25 +39,37 @@ function Adding() {
       <div className="main">
         <form onSubmit={handleSubmit}>
           <Input
-            sx={dark === false ? { margin: "15px", width: "600px" }: {margin: "15px", width: "600px", color: "white"}}
+            sx={
+              dark === false
+                ? { margin: "15px", width: "600px" }
+                : { margin: "15px", width: "600px", color: "white" }
+            }
             name="goalName"
             value={goalName}
             placeholder="Kitap Adı"
             startAdornment={
               <InputAdornment position="start">
-                <MenuBookTwoToneIcon sx={dark === false ? "" : { color: "rgb(190, 190, 190)"}} />
+                <MenuBookTwoToneIcon
+                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
+                />
               </InputAdornment>
             }
             onChange={(e) => setGoalName(e.target.value)}
           />
           <Input
-            sx={dark === false ? { margin: "15px", width: "600px" }: {margin: "15px", width: "600px", color: "white"}}
+            sx={
+              dark === false
+                ? { margin: "15px", width: "600px" }
+                : { margin: "15px", width: "600px", color: "white" }
+            }
             name="goalAuthor"
             value={goalAuthor}
             placeholder="Yazar"
             startAdornment={
               <InputAdornment position="start">
-                <ModeEditOutlineTwoToneIcon sx={dark === false ? "" : { color: "rgb(190, 190, 190)"}}  />
+                <ModeEditOutlineTwoToneIcon
+                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
+                />
               </InputAdornment>
             }
             onChange={(e) => setGoalAuthor(e.target.value)}

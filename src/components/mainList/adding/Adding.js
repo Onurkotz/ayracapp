@@ -45,49 +45,73 @@ function Adding() {
       <div className="main">
         <form onSubmit={handleSubmit}>
           <Input
-            sx={dark === false ? { margin: "15px", width: "300px" }: {margin: "15px", width: "300px", color: "white"}}
+            sx={
+              dark === false
+                ? { margin: "15px", width: "300px" }
+                : { margin: "15px", width: "300px", color: "white" }
+            }
             name="bookName"
             value={bookName}
             placeholder="Kitap Adı"
             startAdornment={
               <InputAdornment position="start">
-                <MenuBookTwoToneIcon sx={dark === false ? "" : { color: "rgb(190, 190, 190)"}} />
+                <MenuBookTwoToneIcon
+                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
+                />
               </InputAdornment>
             }
             onChange={(e) => setBookName(e.target.value)}
           />
           <Input
-            sx={dark === false ? { margin: "15px", width: "300px" }: {margin: "15px", width: "300px", color: "white"}}
+            sx={
+              dark === false
+                ? { margin: "15px", width: "300px" }
+                : { margin: "15px", width: "300px", color: "white" }
+            }
             name="author"
             value={author}
             placeholder="Yazar"
             startAdornment={
               <InputAdornment position="start">
-                <ModeEditOutlineTwoToneIcon sx={dark === false ? "" : { color: "rgb(190, 190, 190)"}} />
+                <ModeEditOutlineTwoToneIcon
+                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
+                />
               </InputAdornment>
             }
             onChange={(e) => setAuthor(e.target.value)}
           />
           <Input
-            sx={dark === false ? { margin: "15px", width: "300px" }: {margin: "15px", width: "300px", color: "white"}}
+            sx={
+              dark === false
+                ? { margin: "15px", width: "300px" }
+                : { margin: "15px", width: "300px", color: "white" }
+            }
             name="genre"
             value={genre}
             placeholder="Tür"
             startAdornment={
               <InputAdornment position="start">
-                <ArticleIcon sx={dark === false ? "" : { color: "rgb(190, 190, 190)"}} />
+                <ArticleIcon
+                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
+                />
               </InputAdornment>
             }
             onChange={(e) => setGenre(e.target.value)}
           />
           <Input
-            sx={dark === false ? { margin: "15px", width: "300px" }: {margin: "15px", width: "300px", color: "white"}}
+            sx={
+              dark === false
+                ? { margin: "15px", width: "300px" }
+                : { margin: "15px", width: "300px", color: "white" }
+            }
             name="page"
             placeholder="Sayfa Sayısı"
             value={page}
             startAdornment={
               <InputAdornment position="start">
-                <Filter4Icon sx={dark === false ? "" : { color: "rgb(190, 190, 190)"}} />
+                <Filter4Icon
+                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
+                />
               </InputAdornment>
             }
             onChange={(e) => setPage(e.target.value)}

@@ -13,7 +13,7 @@ import "./dark.css";
 function DarkMode() {
   const dispatch = useDispatch();
 
-  const [checked, setChecked] = useState(false);
+  const [setChecked] = useState(false);
 
   const dark = useSelector((state) => state.dark.checked);
 
@@ -25,7 +25,7 @@ function DarkMode() {
             control={
               <Switch
                 color="primary"
-                checked={checked}
+                checked={dark}
                 onChange={(e) => setChecked(e.target.checked)}
                 onClick={() => dispatch(check({ checked: true }))}
                 name="checked"

@@ -1,22 +1,22 @@
-.container{
-    padding: 40px;
+.container {
+  padding: 40px;
 }
 
-ol{
-    background-color: rgb(230, 230, 230);
+ol {
+  background-color: rgb(230, 230, 230);
 }
 
-li{
-    font-size: 20px;
-    padding: 10px 10px 5px 10px ;
-    border-bottom: 1px solid black;
-    margin-bottom: 15px;
+li {
+  font-size: 20px;
+  padding: 10px 10px 5px 10px;
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
 }
 
-span{
-    float: right; 
+span {
+  float: right;
 }
 
-.darkol{
-    background-color: rgb(110, 110, 110);
+.darkol {
+  background-color: rgb(110, 110, 110);
 }

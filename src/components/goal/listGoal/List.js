@@ -62,7 +62,8 @@ function List() {
                     }
                   : {
                       backgroundColor: "rgb(110, 110, 110)",
-                    }}
+                    }
+              }
             >
               <TableCell sx={dark === false ? ligthMode : darkMode}>
                 Kitap Adı
@@ -87,13 +88,25 @@ function List() {
                 key={item.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }} component="th" scope="row">
+                <TableCell
+                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
+                  component="th"
+                  scope="row"
+                >
                   {item.goalName}
                 </TableCell>
 
-                <TableCell sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }} align="left">{item.goalAuthor}</TableCell>
+                <TableCell
+                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
+                  align="left"
+                >
+                  {item.goalAuthor}
+                </TableCell>
 
-                <TableCell sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }} align="right">
+                <TableCell
+                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
+                  align="right"
+                >
                   <DeleteIcon
                     className="delete"
                     onClick={() => deleteBook(item.id)}

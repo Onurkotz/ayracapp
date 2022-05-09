@@ -75,21 +75,21 @@ function List() {
               </TableCell>
               <TableCell
                 sx={dark === false ? ligthMode : darkMode}
-                align="right"
+                align="left"
               >
                 Yazar
               </TableCell>
               <TableCell
                 sx={dark === false ? ligthMode : darkMode}
-                align="right"
+                align="center"
               >
-                Sayfa Sayısı
+                Tür
               </TableCell>
               <TableCell
                 sx={dark === false ? ligthMode : darkMode}
-                align="right"
+                align="center"
               >
-                Tür
+                Sayfa Sayısı
               </TableCell>
               <TableCell
                 sx={dark === false ? ligthMode : darkMode}
@@ -112,33 +112,38 @@ function List() {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  <Link className={dark === false ? "" : "darka"} to={`/think/${item.id}`}>{item.bookName}</Link>
+                  <Link
+                    className={dark === false ? "" : "darka"}
+                    to={`/think/${item.id}`}
+                  >
+                    {item.bookName}
+                  </Link>
                 </TableCell>
 
                 <TableCell
                   sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
-                  align="right"
+                  align="left"
                 >
                   {item.author}
                 </TableCell>
                 <TableCell
                   sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
-                  align="right"
+                  align="center"
                 >
-                  {item.page}
+                  {item.genre}
                 </TableCell>
                 <TableCell
                   sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
-                  align="right"
+                  align="center"
                 >
-                  {item.genre}
+                  {item.page}
                 </TableCell>
                 <TableCell align="right">
                   <ProgressBar readed="165" page={item.page} />
                 </TableCell>
                 <TableCell align="right">
                   <DeleteIcon
-                    sx={dark === false ?{ color: "red" } : {color: "purple"}}
+                    sx={dark === false ? { color: "red" } : { color: "purple" }}
                     className="delete"
                     onClick={() => deleteBook(item.id)}
                   />
