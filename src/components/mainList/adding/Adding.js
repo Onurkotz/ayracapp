@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./adding.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { addList } from "../../../redux/listSlice/listSlice";
 
@@ -17,6 +17,8 @@ function Adding() {
   const [author, setAuthor] = useState("");
   const [page, setPage] = useState("");
   const [genre, setGenre] = useState("");
+
+  const dark = useSelector((state) => state.dark.checked);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -90,7 +92,7 @@ function Adding() {
             }
             onChange={(e) => setPage(e.target.value)}
           />
-          <button>Ekle</button>
+          <button className={dark === false ? "" : "darkButton"}>Ekle</button>
         </form>
       </div>
     </div>

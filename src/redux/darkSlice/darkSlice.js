@@ -8,7 +8,7 @@ export const darkSlice = createSlice({
   reducers: {
     check: (state, action) => {
       if (action.payload) {
-        state.checked = true;
+        state.checked = !state.checked;
       }
     },
   },

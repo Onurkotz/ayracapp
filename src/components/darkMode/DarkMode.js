@@ -17,17 +17,6 @@ function DarkMode() {
 
   const dark = useSelector((state) => state.dark.isChecked);
 
-  const handleChange = (e) => {
-      
-    setChecked(e.target.checked);
-  };
-
-  const handleSubmit = () => {
-    dispatch(check());
-  };
-
-  console.log(dark);
-
   return (
     <div className="dark">
       <FormControl component="fieldset">
@@ -37,8 +26,8 @@ function DarkMode() {
               <Switch
                 color="primary"
                 checked={checked}
-                onChange={handleChange}
-                onClick={handleSubmit}
+                onChange={(e) => setChecked(e.target.checked)}
+                onClick={() => dispatch(check({checked: true}))}
                 name="checked"
               />
             }
