@@ -13,7 +13,7 @@ import "./dark.css";
 function DarkMode() {
   const dispatch = useDispatch();
 
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
 
   const dark = useSelector((state) => state.dark.isChecked);
 
