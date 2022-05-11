@@ -57,7 +57,9 @@ function Adding() {
             onChange={(e) => setThink(e.target.value)}
           />
 
-          <button className={dark === false ? "" : "darkButton"}>{english === false ? "Ekle" : "Add"}</button>
+          <button className={dark === false ? "" : "darkButton"}>
+            {english === false ? "Ekle" : "Add"}
+          </button>
         </form>
       </div>
     </div>

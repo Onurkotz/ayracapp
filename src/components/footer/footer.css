@@ -1,0 +1,16 @@
+.footerBack {
+  padding: 0px 30px 30px 30px;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  text-align: -webkit-center;
+}
+
+.footerMid {
+  width: 1050px;
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid gray;
+}

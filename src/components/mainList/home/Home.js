@@ -3,6 +3,7 @@ import React from "react";
 import Adding from "../adding/Adding";
 import List from "../list/List";
 import Total from "../total/Total";
+import Footer from "../../footer/Footers";
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
       <Adding />
       <Total />
       <List />
+      <Footer />
     </div>
   );
 }
