@@ -19,18 +19,24 @@ function Adding() {
   const [genre, setGenre] = useState("");
 
   const dark = useSelector((state) => state.dark.checked);
+  const english = useSelector((state) => state.languageMode.isEnglish);
+
+  const space = () => {
+    setBookName("");
+    setAuthor("");
+    setGenre("");
+    setPage("");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const space = () => {
-      setBookName("");
-      setAuthor("");
-      setGenre("");
-      setPage("");
-    };
     if (bookName === "" || author === "" || page === "" || genre === "") {
-      alert("Girişler boş bırakılamaz.");
+      alert(
+        english === false
+          ? "Girişler boş bırakılamaz."
+          : "The inputs could not be empty."
+      );
       space();
 
       return false;
@@ -52,7 +58,7 @@ function Adding() {
             }
             name="bookName"
             value={bookName}
-            placeholder="Kitap Adı"
+            placeholder={english === false ? "Kitap Adı" : "Book Name"}
             startAdornment={
               <InputAdornment position="start">
                 <MenuBookTwoToneIcon
@@ -70,7 +76,7 @@ function Adding() {
             }
             name="author"
             value={author}
-            placeholder="Yazar"
+            placeholder={english === false ? "Yazar" : "Author"}
             startAdornment={
               <InputAdornment position="start">
                 <ModeEditOutlineTwoToneIcon
@@ -88,7 +94,7 @@ function Adding() {
             }
             name="genre"
             value={genre}
-            placeholder="Tür"
+            placeholder={english === false ? "Tür" : "Genre"}
             startAdornment={
               <InputAdornment position="start">
                 <ArticleIcon
@@ -105,7 +111,7 @@ function Adding() {
                 : { margin: "15px", width: "300px", color: "white" }
             }
             name="page"
-            placeholder="Sayfa Sayısı"
+            placeholder={english === false ? "Sayfa Sayısı" : "Pages"}
             value={page}
             startAdornment={
               <InputAdornment position="start">
@@ -116,7 +122,9 @@ function Adding() {
             }
             onChange={(e) => setPage(e.target.value)}
           />
-          <button className={dark === false ? "" : "darkButton"}>Ekle</button>
+          <button className={dark === false ? "" : "darkButton"}>
+            {english === false ? "Ekle" : "Add"}
+          </button>
         </form>
       </div>
     </div>

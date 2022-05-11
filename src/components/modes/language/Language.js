@@ -1,37 +1,37 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { check } from "../../redux/darkSlice/darkSlice";
+import {englishMode} from "../../../redux/languageSlice/languageSlice";
 
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 
-import "./dark.css";
+import "./language.css";
 
-function DarkMode() {
+function Language() {
   const dispatch = useDispatch();
 
-  const [setChecked] = useState(false);
+  const [setIsEnglish] = useState(false);
 
-  const dark = useSelector((state) => state.dark.checked);
+  const english = useSelector((state) => state.languageMode.isEnglish);
 
   return (
-    <div className="dark">
+    <div className="lang">
       <FormControl component="fieldset">
         <FormGroup aria-label="position" row>
           <FormControlLabel
             control={
               <Switch
                 color="primary"
-                checked={dark}
-                onChange={(e) => setChecked(e.target.checked)}
-                onClick={() => dispatch(check({ checked: true }))}
+                checked={english}
+                onChange={(e) => setIsEnglish(e.target.checked)}
+                onClick={() => dispatch(englishMode({ isEnglish: true }))}
                 name="checked"
               />
             }
-            label={dark === false ? "Karanlık Mod" : "Açık Mod"}
+            label={english === false ? "English" : "Türkçe"}
             labelPlacement="start"
           />
         </FormGroup>
@@ -40,4 +40,4 @@ function DarkMode() {
   );
 }
 
-export default DarkMode;
+export default Language;

@@ -4,7 +4,7 @@ import "./header.css";
 function Header() {
   return (
     <div>
-      <div className="theme">KİTABIM</div>
+      <div className="theme">AYRAÇ</div>
     </div>
   );
 }

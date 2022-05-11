@@ -24,13 +24,13 @@ function List() {
   const ligthMode = { fontSize: "20px", fontWeight: "bold" };
 
   const items = useSelector((state) => state.bookList.items);
-
   const dark = useSelector((state) => state.dark.checked);
+  const english = useSelector((state) => state.languageMode.isEnglish);
 
   const dispatch = useDispatch();
 
   const deleteBook = (id) => {
-    if (window.confirm("Emin misiniz?")) {
+    if (window.confirm(english === false ? "Emin misniz?" : "Are you sure?")) {
       dispatch(deleteItem(id));
     }
   };
@@ -71,37 +71,37 @@ function List() {
               }
             >
               <TableCell sx={dark === false ? ligthMode : darkMode}>
-                Kitap Adı
+                {english === false ? "Kitap Adı" : "Book Name"}
               </TableCell>
               <TableCell
                 sx={dark === false ? ligthMode : darkMode}
                 align="left"
               >
-                Yazar
+                {english === false ? "Yazar" : "Author"}
               </TableCell>
               <TableCell
                 sx={dark === false ? ligthMode : darkMode}
                 align="center"
               >
-                Tür
+                {english === false ? "Tür" : "Genre"}
               </TableCell>
               <TableCell
                 sx={dark === false ? ligthMode : darkMode}
                 align="center"
               >
-                Sayfa Sayısı
+                {english === false ? "Sayfa Sayısı" : "Pages"}
               </TableCell>
               <TableCell
                 sx={dark === false ? ligthMode : darkMode}
                 align="right"
               >
-                İlerleme Durmu
+                {english === false ? "İlerleme Durumu" : "Progress Status"}
               </TableCell>
               <TableCell
                 sx={dark === false ? ligthMode : darkMode}
                 align="right"
               >
-                Sil
+                {english === false ? "Sil" : "Delete"}
               </TableCell>
             </TableRow>
           </TableHead>

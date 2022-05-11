@@ -9,13 +9,14 @@ import DeleteIcon from "@mui/icons-material/Delete";
 function ListDraft() {
   const items = useSelector((state) => state.about.items);
   const dark = useSelector((state) => state.dark.checked);
+  const english = useSelector((state) => state.languageMode.isEnglish);
 
   const dispatch = useDispatch();
 
   console.log(items);
 
   const handleDelete = (id) => {
-    if (window.confirm("Emin misiniz?")) {
+    if (window.confirm(english === false ? "Emin misiniz?" : "Are you sure?")) {
       dispatch(deleteThink(id));
     }
   };

@@ -7,14 +7,15 @@ import "./totalGoal.css";
 function TotalGoal() {
   const items = useSelector((state) => state.myGoals.items);
   const dark = useSelector((state) => state.dark.checked);
+  const english = useSelector((state) => state.languageMode.isEnglish);
 
   return (
     <div className="totalGoal">
       <Link className={dark === false ? "link" : "linkDark"} to="/">
-        Geri Dön
+        {english === false ? "Geri Dön" : "Back"}
       </Link>
       <span>
-        Almak istediğim kitap sayısı: <b>{items.length}</b>
+        {english === false ? "Almak istediğim kitap sayısı" : "Number of book that I want to get"}: <b>{items.length}</b>
       </span>
     </div>
   );

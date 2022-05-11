@@ -15,16 +15,22 @@ function Adding() {
   const [goalName, setGoalName] = useState("");
   const [goalAuthor, setGoalAuthor] = useState("");
   const dark = useSelector((state) => state.dark.checked);
+  const english = useSelector((state) => state.languageMode.isEnglish);
+
+  const space = () => {
+    setGoalName("");
+    setGoalAuthor("");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const space = () => {
-      setGoalName("");
-      setGoalAuthor("");
-    };
     if (goalName === "" || goalAuthor === "") {
-      alert("Girişler boş bırakılamaz.");
+      alert(
+        english === false
+          ? "Girişler boş bırakılamaz."
+          : "The input could not be empty."
+      );
       space();
 
       return false;
@@ -46,7 +52,7 @@ function Adding() {
             }
             name="goalName"
             value={goalName}
-            placeholder="Kitap Adı"
+            placeholder={english === false ? "Kitap Adı" : "Book Name"}
             startAdornment={
               <InputAdornment position="start">
                 <MenuBookTwoToneIcon
@@ -64,7 +70,7 @@ function Adding() {
             }
             name="goalAuthor"
             value={goalAuthor}
-            placeholder="Yazar"
+            placeholder={english === false ? "Yazar" : "Author"}
             startAdornment={
               <InputAdornment position="start">
                 <ModeEditOutlineTwoToneIcon
@@ -75,7 +81,9 @@ function Adding() {
             onChange={(e) => setGoalAuthor(e.target.value)}
           />
 
-          <button className={dark === false ? "" : "darkButton"}>Ekle</button>
+          <button className={dark === false ? "" : "darkButton"}>
+            {english === false ? "Ekle" : "Add"}
+          </button>
         </form>
       </div>
     </div>

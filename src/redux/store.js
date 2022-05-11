@@ -3,6 +3,7 @@ import bookListReducer from "./listSlice/listSlice";
 import aboutReducer from "./aboutSlice/aboutSlice";
 import goalReducer from "./goalSlice/goalSlice";
 import darkReducer from "./darkSlice/darkSlice";
+import languageReducer from "./languageSlice/languageSlice";
 
 import throttle from "lodash/throttle";
 import { saveState, loadState } from "./localStorage/localStorage";
@@ -15,6 +16,7 @@ export const store = configureStore({
     about: aboutReducer,
     myGoals: goalReducer,
     dark: darkReducer,
+    languageMode: languageReducer,
   },
   preloadedState,
 });

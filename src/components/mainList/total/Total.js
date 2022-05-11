@@ -10,6 +10,7 @@ function Total() {
   const items = useSelector((state) => state.bookList.items);
 
   const dark = useSelector((state) => state.dark.checked);
+  const english = useSelector((state) => state.languageMode.isEnglish);
 
   return (
     <div className="totalMain">
@@ -21,11 +22,16 @@ function Total() {
         }
       />
       <Link className={dark === false ? "link" : "darkLink"} to="/myGoals">
-        Hedef Kitap Listem
+        {english === false
+          ? "Okumak İstediklerim"
+          : "Books That I Want To Read"}
       </Link>
 
       <span>
-        Kaç kitabım var: <b>{items.length}</b>
+        {english === false
+          ? "Kaç kitabım var ? "
+          : "How many books do I have ? "}
+        : <b>{items.length}</b>
       </span>
     </div>
   );

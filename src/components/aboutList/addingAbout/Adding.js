@@ -14,12 +14,17 @@ function Adding() {
   const [think, setThink] = useState("");
 
   const dark = useSelector((state) => state.dark.checked);
+  const english = useSelector((state) => state.languageMode.isEnglish);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (think === "") {
-      alert("Girişler boş bırakılamaz.");
+      alert(
+        english === false
+          ? "Girişler boş bırakılamaz."
+          : "The inputs could not be empty."
+      );
       setThink();
 
       return false;
@@ -41,7 +46,7 @@ function Adding() {
             }
             name="think"
             value={think}
-            placeholder="Notlarını Yaz"
+            placeholder={english === false ? "Not Yaz" : "Write Note"}
             startAdornment={
               <InputAdornment position="start">
                 <ArticleIcon
@@ -52,7 +57,7 @@ function Adding() {
             onChange={(e) => setThink(e.target.value)}
           />
 
-          <button className={dark === false ? "" : "darkButton"}>Ekle</button>
+          <button className={dark === false ? "" : "darkButton"}>{english === false ? "Ekle" : "Add"}</button>
         </form>
       </div>
     </div>

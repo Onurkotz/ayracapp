@@ -12,13 +12,14 @@ function About() {
   //const  {id} = useParams();
 
   const dark = useSelector((state) => state.dark.checked);
+  const english = useSelector((state) => state.languageMode.isEnglish);
 
   return (
     <div>
       <AddingAbout />
       <div className="about">
         <Link className={dark === false ? "link" : "darkLink"} to="/">
-          Geri Dön
+          {english === false ? "Geri Dön" : "Back"}
         </Link>
       </div>
 
