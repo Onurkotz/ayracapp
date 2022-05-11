@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 
 import {englishMode} from "../../../redux/languageSlice/languageSlice";
 
+import Flag from 'react-world-flags'
+
+
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -31,7 +34,8 @@ function Language() {
                 name="checked"
               />
             }
-            label={english === false ? "English" : "Türkçe"}
+            label={english === false ? <Flag code="gb" width="50"/>
+            : <Flag code="tr" width="40" />}
             labelPlacement="start"
           />
         </FormGroup>

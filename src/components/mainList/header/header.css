@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap');
 
 .theme {
   padding: 20px;
@@ -6,5 +7,5 @@
   font-size: 35px;
   margin-top: -50px;
   margin-bottom: 10px;
-  font-family: "Pacifico", cursive;
+  font-family: 'Beth Ellen', cursive;;
 }
