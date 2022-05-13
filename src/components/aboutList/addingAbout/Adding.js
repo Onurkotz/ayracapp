@@ -25,7 +25,6 @@ function Adding() {
           ? "Girişler boş bırakılamaz."
           : "The inputs could not be empty."
       );
-      setThink();
 
       return false;
     }
@@ -44,7 +43,7 @@ function Adding() {
                 ? { margin: "15px", width: "600px" }
                 : { margin: "15px", width: "600px", color: "white" }
             }
-            name="think"
+            name="comment"
             value={think}
             placeholder={english === false ? "Not Yaz" : "Write Note"}
             startAdornment={

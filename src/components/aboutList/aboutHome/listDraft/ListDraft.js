@@ -13,8 +13,6 @@ function ListDraft() {
 
   const dispatch = useDispatch();
 
-  console.log(items);
-
   const handleDelete = (id) => {
     if (window.confirm(english === false ? "Emin misiniz?" : "Are you sure?")) {
       dispatch(deleteThink(id));

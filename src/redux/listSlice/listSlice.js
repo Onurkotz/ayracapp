@@ -37,10 +37,11 @@ export const listSlice = createSlice({
       const filtered = state.items.filter((item) => item.id !== id);
       state.items = filtered;
     },
+    addComment: (state, action) => {
+      state.items.comments.push(action.payload);
+    },
   },
 });
 
-export const { addList, deleteItem } = listSlice.actions;
+export const { addList, deleteItem, addComment } = listSlice.actions;
 export default listSlice.reducer;
-
-
