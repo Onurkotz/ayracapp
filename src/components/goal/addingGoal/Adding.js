@@ -17,6 +17,11 @@ function Adding() {
   const dark = useSelector((state) => state.dark.checked);
   const english = useSelector((state) => state.languageMode.isEnglish);
 
+  const inputSx =
+    dark === false
+      ? { margin: "15px", width: "600px" }
+      : { margin: "15px", width: "600px", color: "white" };
+
   const space = () => {
     setGoalName("");
     setGoalAuthor("");
@@ -45,11 +50,7 @@ function Adding() {
       <div className="main">
         <form onSubmit={handleSubmit}>
           <Input
-            sx={
-              dark === false
-                ? { margin: "15px", width: "600px" }
-                : { margin: "15px", width: "600px", color: "white" }
-            }
+            sx={inputSx}
             name="goalName"
             value={goalName}
             placeholder={english === false ? "Kitap Adı" : "Book Name"}
@@ -63,11 +64,7 @@ function Adding() {
             onChange={(e) => setGoalName(e.target.value)}
           />
           <Input
-            sx={
-              dark === false
-                ? { margin: "15px", width: "600px" }
-                : { margin: "15px", width: "600px", color: "white" }
-            }
+            sx={inputSx}
             name="goalAuthor"
             value={goalAuthor}
             placeholder={english === false ? "Yazar" : "Author"}

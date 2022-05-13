@@ -27,6 +27,9 @@ function List() {
   const dark = useSelector((state) => state.dark.checked);
   const english = useSelector((state) => state.languageMode.isEnglish);
 
+  const tableCellsx = dark === false ? "" : { color: "rgb(190, 190, 190)" };
+  const tableHeadCellsx = dark === false ? ligthMode : darkMode;
+
   const dispatch = useDispatch();
 
   const deleteBook = (id) => {
@@ -70,37 +73,22 @@ function List() {
                     }
               }
             >
-              <TableCell sx={dark === false ? ligthMode : darkMode}>
+              <TableCell sx={tableHeadCellsx}>
                 {english === false ? "Kitap Adı" : "Book Name"}
               </TableCell>
-              <TableCell
-                sx={dark === false ? ligthMode : darkMode}
-                align="left"
-              >
+              <TableCell sx={tableHeadCellsx} align="left">
                 {english === false ? "Yazar" : "Author"}
               </TableCell>
-              <TableCell
-                sx={dark === false ? ligthMode : darkMode}
-                align="center"
-              >
+              <TableCell sx={tableHeadCellsx} align="center">
                 {english === false ? "Tür" : "Genre"}
               </TableCell>
-              <TableCell
-                sx={dark === false ? ligthMode : darkMode}
-                align="center"
-              >
+              <TableCell sx={tableHeadCellsx} align="center">
                 {english === false ? "Sayfa Sayısı" : "Pages"}
               </TableCell>
-              <TableCell
-                sx={dark === false ? ligthMode : darkMode}
-                align="right"
-              >
+              <TableCell sx={tableHeadCellsx} align="right">
                 {english === false ? "İlerleme Durumu" : "Progress Status"}
               </TableCell>
-              <TableCell
-                sx={dark === false ? ligthMode : darkMode}
-                align="right"
-              >
+              <TableCell sx={tableHeadCellsx} align="right">
                 {english === false ? "Sil" : "Delete"}
               </TableCell>
             </TableRow>
@@ -120,22 +108,13 @@ function List() {
                   </Link>
                 </TableCell>
 
-                <TableCell
-                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
-                  align="left"
-                >
+                <TableCell sx={tableCellsx} align="left">
                   {item.author}
                 </TableCell>
-                <TableCell
-                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
-                  align="center"
-                >
+                <TableCell sx={tableCellsx} align="center">
                   {item.genre}
                 </TableCell>
-                <TableCell
-                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
-                  align="center"
-                >
+                <TableCell sx={tableCellsx} align="center">
                   {item.page}
                 </TableCell>
                 <TableCell align="right">

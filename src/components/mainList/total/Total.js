@@ -12,6 +12,8 @@ function Total() {
   const dark = useSelector((state) => state.dark.checked);
   const english = useSelector((state) => state.languageMode.isEnglish);
 
+  const className = dark === false ? "link" : "darkLink"
+
   return (
     <div className="totalMain">
       <FlagRoundedIcon
@@ -21,7 +23,7 @@ function Total() {
             : { color: "purple", margin: "-3px" }
         }
       />
-      <Link className={dark === false ? "link" : "darkLink"} to="/myGoals">
+      <Link className={className} to="/myGoals">
         {english === false
           ? "Okumak İstediklerim"
           : "Books That I Want To Read"}

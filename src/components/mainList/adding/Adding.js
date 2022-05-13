@@ -21,6 +21,11 @@ function Adding() {
   const dark = useSelector((state) => state.dark.checked);
   const english = useSelector((state) => state.languageMode.isEnglish);
 
+  const inputSx =
+    dark === false
+      ? { margin: "15px", width: "300px" }
+      : { margin: "15px", width: "300px", color: "white" };
+
   const space = () => {
     setBookName("");
     setAuthor("");
@@ -51,11 +56,7 @@ function Adding() {
       <div className="main">
         <form onSubmit={handleSubmit}>
           <Input
-            sx={
-              dark === false
-                ? { margin: "15px", width: "300px" }
-                : { margin: "15px", width: "300px", color: "white" }
-            }
+            sx={inputSx}
             name="bookName"
             value={bookName}
             placeholder={english === false ? "Kitap Adı" : "Book Name"}
@@ -69,11 +70,7 @@ function Adding() {
             onChange={(e) => setBookName(e.target.value)}
           />
           <Input
-            sx={
-              dark === false
-                ? { margin: "15px", width: "300px" }
-                : { margin: "15px", width: "300px", color: "white" }
-            }
+            sx={inputSx}
             name="author"
             value={author}
             placeholder={english === false ? "Yazar" : "Author"}
@@ -87,11 +84,7 @@ function Adding() {
             onChange={(e) => setAuthor(e.target.value)}
           />
           <Input
-            sx={
-              dark === false
-                ? { margin: "15px", width: "300px" }
-                : { margin: "15px", width: "300px", color: "white" }
-            }
+            sx={inputSx}
             name="genre"
             value={genre}
             placeholder={english === false ? "Tür" : "Genre"}
@@ -105,11 +98,7 @@ function Adding() {
             onChange={(e) => setGenre(e.target.value)}
           />
           <Input
-            sx={
-              dark === false
-                ? { margin: "15px", width: "300px" }
-                : { margin: "15px", width: "300px", color: "white" }
-            }
+            sx={inputSx}
             name="page"
             placeholder={english === false ? "Sayfa Sayısı" : "Pages"}
             value={page}

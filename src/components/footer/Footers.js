@@ -11,8 +11,8 @@ function Footers() {
       <div className="footerMid">
         <footer style={{ textAlign: "center" }}>
           {english === false
-            ? "Ayraç ©2022 Kotz tarafından oluşturulmuşur."
-            : "Ayraç ©2022 Created by Kotz."}
+            ? "Ayraç ©2022 Onurkotz tarafından oluşturulmuşur."
+            : "Ayraç ©2022 Created by Onurkotz."}
         </footer>
       </div>
     </div>

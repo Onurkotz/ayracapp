@@ -22,6 +22,8 @@ function List() {
     color: "rgb(190, 190, 190)",
   };
   const ligthMode = { fontSize: "20px", fontWeight: "bold" };
+  const tableCellsx = dark === false ? ligthMode : darkMode;
+  const tableCellMapsx = dark === false ? "" : { color: "rgb(190, 190, 190)" };
 
   const dispatch = useDispatch();
 
@@ -66,19 +68,13 @@ function List() {
                     }
               }
             >
-              <TableCell sx={dark === false ? ligthMode : darkMode}>
+              <TableCell sx={tableCellsx}>
                 {english === false ? "Kitap Adı" : "Book Name"}
               </TableCell>
-              <TableCell
-                sx={dark === false ? ligthMode : darkMode}
-                align="left"
-              >
+              <TableCell sx={tableCellsx} align="left">
                 {english === false ? "Yazar" : "Author"}
               </TableCell>
-              <TableCell
-                sx={dark === false ? ligthMode : darkMode}
-                align="right"
-              >
+              <TableCell sx={tableCellsx} align="right">
                 {english === false ? "Sil" : "Delete"}
               </TableCell>
             </TableRow>
@@ -89,25 +85,15 @@ function List() {
                 key={item.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell
-                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
-                  component="th"
-                  scope="row"
-                >
+                <TableCell sx={tableCellMapsx} component="th" scope="row">
                   {item.goalName}
                 </TableCell>
 
-                <TableCell
-                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
-                  align="left"
-                >
+                <TableCell sx={tableCellMapsx} align="left">
                   {item.goalAuthor}
                 </TableCell>
 
-                <TableCell
-                  sx={dark === false ? "" : { color: "rgb(190, 190, 190)" }}
-                  align="right"
-                >
+                <TableCell sx={tableCellMapsx} align="right">
                   <DeleteIcon
                     className="delete"
                     onClick={() => deleteBook(item.id)}

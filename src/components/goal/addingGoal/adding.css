@@ -21,13 +21,7 @@ button:hover {
 }
 
 .darkButton {
-  width: 500px;
-  height: 30px;
   background-color: rgb(175, 71, 175);
-  border-radius: 5px;
-  border: 1px solid black;
-  cursor: url("../../../Assets/cursor.gif") 0 50, auto;
-  font-size: 17px;
   color: rgb(190, 190, 190);
 }
 
