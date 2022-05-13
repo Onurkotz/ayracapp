@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import {englishMode} from "../../../redux/languageSlice/languageSlice";
+import { englishMode } from "../../../redux/languageSlice/languageSlice";
 
-import Flag from 'react-world-flags'
-
+import Flag from "react-world-flags";
 
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
@@ -34,8 +33,13 @@ function Language() {
                 name="checked"
               />
             }
-            label={english === false ? <Flag code="gb" width="50"/>
-            : <Flag code="tr" width="40" />}
+            label={
+              english === false ? (
+                <Flag code="gb" width="50" />
+              ) : (
+                <Flag code="tr" width="40" />
+              )
+            }
             labelPlacement="start"
           />
         </FormGroup>
