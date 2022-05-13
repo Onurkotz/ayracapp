@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { englishMode } from "../../../redux/languageSlice/languageSlice";
 
-import Flag from "react-world-flags";
+import ReactCountryFlag from "react-country-flag";
 
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
@@ -35,9 +35,25 @@ function Language() {
             }
             label={
               english === false ? (
-                <Flag code="gb" width="50" />
+                <ReactCountryFlag
+                  countryCode="GB"
+                  svg
+                  style={{
+                    width: "45px",
+                    height: "20px",
+                  }}
+                  title="GB"
+                />
               ) : (
-                <Flag code="tr" width="40" />
+                <ReactCountryFlag
+                  countryCode="TR"
+                  svg
+                  style={{
+                    width: "40px",
+                    height: "20px",
+                  }}
+                  title="US"
+                />
               )
             }
             labelPlacement="start"
