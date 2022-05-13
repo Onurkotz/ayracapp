@@ -5,3 +5,6 @@
 ## Contains Material UI.
 
 ## Contains dark/ligth and Turkish/English mode.
+
+## It has MIT License.
+ 
