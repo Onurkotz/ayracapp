@@ -14,6 +14,10 @@ const initialState = bookListAdapter.getInitialState({
       author: "Dostoyevski",
       page: 650,
       genre: "Roman",
+      comments: [{
+        id: "15646",
+        comment: "Mütüş bir kitap."
+      }]
     },
     {
       id: "2",
@@ -21,8 +25,13 @@ const initialState = bookListAdapter.getInitialState({
       author: "Nikos Kazancakis",
       page: 325,
       genre: "Roman",
+      comments: [{
+        id: "144",
+        comment: "Harika bir kitap."
+      }]
     },
   ],
+  
 });
 console.log(initialState);
 
