@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Header from "./components/mainList/header/Header";
 import Home from "./components/mainList/home/Home";
@@ -10,6 +11,8 @@ import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+
+  
   const dark = useSelector((state) => state.dark.checked);
 
   return (
