@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteThink } from "../../../../redux/aboutSlice/aboutSlice";
-import { bookSelectors } from "../../../../redux/listSlice/listSlice";
+//import { bookSelectors } from "../../../../redux/listSlice/listSlice";
 
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 
 import "./list.css";
 
@@ -17,9 +17,9 @@ function ListDraft() {
   const dark = useSelector((state) => state.dark.checked);
   const english = useSelector((state) => state.languageMode.isEnglish);
 
-  const { id } = useParams();
+  //const { id } = useParams();
 
- const detail = useSelector((state) => bookSelectors.selectById(state, id));
+ // const detail = useSelector((state) => bookSelectors.selectById(state, id));
 
  
   const dispatch = useDispatch();
