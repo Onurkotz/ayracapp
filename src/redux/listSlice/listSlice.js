@@ -2,6 +2,10 @@ import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 
 export const bookListAdapter = createEntityAdapter();
 
+export const bookSelectors = bookListAdapter.getSelectors(
+  (state) => state.bookList
+);
+
 const initialState = bookListAdapter.getInitialState({
   items: [
     {
@@ -21,9 +25,7 @@ const initialState = bookListAdapter.getInitialState({
   ],
 });
 console.log(initialState);
-export const bookListSelector = bookListAdapter.getSelectors(
-  (state) => state.bookList
-);
+
 
 export const listSlice = createSlice({
   name: "bookList",

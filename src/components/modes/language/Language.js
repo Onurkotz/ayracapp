@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { englishMode } from "../../../redux/languageSlice/languageSlice";
@@ -13,9 +13,6 @@ import FormControl from "@mui/material/FormControl";
 import "./language.css";
 
 function Language() {
-  const defaultLocale = navigator.language;
-
-  console.log(defaultLocale);
 
   const dispatch = useDispatch();
 
@@ -23,11 +20,6 @@ function Language() {
 
   const english = useSelector((state) => state.languageMode.isEnglish);
 
-  useEffect(() => {
-    if (defaultLocale === "tr") {
-      dispatch(englishMode({ isEnglish: true }));
-    }
-  }, []);
 
   return (
     <div className="lang">
