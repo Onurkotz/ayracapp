@@ -10,13 +10,42 @@ import { useSelector } from "react-redux";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <h1>Upps.</h1>;
+    }
+
+    return this.props.children; 
+  }
+}
+
 function App() {
 
   
   const dark = useSelector((state) => state.dark.checked);
 
   return (
+    <ErrorBoundary> 
     <div className={dark === false ? "" : "darkMode"}>
+      
+
       <Modes />
       <Header />
       <Router>
@@ -27,7 +56,10 @@ function App() {
         </Routes>
       </Router>
       <Footer />
+
+      
     </div>
+    </ErrorBoundary>
   );
 }
 

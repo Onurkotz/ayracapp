@@ -19,9 +19,8 @@ function ListDraft() {
 
   const { id } = useParams();
 
-  const detail = useSelector((state) => bookSelectors.selectById(state, id));
+ const detail = useSelector((state) => bookSelectors.selectById(state, id));
 
-  console.log(detail)
  
   const dispatch = useDispatch();
 
@@ -33,7 +32,7 @@ function ListDraft() {
 
   return (
     <div className="container">
-      <h1>{id}</h1>
+      
       <ol className={dark === false ? "" : "darkol"}>
         {items.map((item) => (
           <li key={item.id}>
