@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -32,33 +31,27 @@ class ErrorBoundary extends React.Component {
       return <h1>Upps.</h1>;
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 
 function App() {
-
-  
   const dark = useSelector((state) => state.dark.checked);
 
   return (
-    <ErrorBoundary> 
-    <div className={dark === false ? "" : "darkMode"}>
-      
-
-      <Modes />
-      <Header />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} exact />
-          <Route path="/think/:id" element={<About />} />
-          <Route path="/myGoals" element={<Goal />} />
-        </Routes>
-      </Router>
-      <Footer />
-
-      
-    </div>
+    <ErrorBoundary>
+      <div className={dark === false ? "" : "darkMode"}>
+        <Modes />
+        <Header />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} exact />
+            <Route path="/think" element={<About />} />
+            <Route path="/myGoals" element={<Goal />} />
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
     </ErrorBoundary>
   );
 }

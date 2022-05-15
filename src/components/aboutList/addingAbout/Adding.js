@@ -30,7 +30,7 @@ function Adding() {
     }
 
     dispatch(addThink({ id: nanoid(), think }));
-    setThink();
+    setThink("");
   };
 
   return (

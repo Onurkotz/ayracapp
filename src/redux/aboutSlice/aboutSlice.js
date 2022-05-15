@@ -1,19 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
+
+export const aboutAdapter = createEntityAdapter();
+
+const initialState = aboutAdapter.getInitialState({
+  items: [
+    {
+      id: 1,
+      think: "Oldukça etlieyici.",
+    },
+    {
+      id: 2,
+      think: "121. sayfadaki ifadeleri not almalıyım",
+    },
+  ],
+});
+
+export const aboutSelectors = aboutAdapter.getSelectors((state) => state.about);
 
 export const aboutSlice = createSlice({
   name: "about",
-  initialState: {
-    items: [
-      {
-        id: 1,
-        think: "Oldukça etlieyici.",
-      },
-      {
-        id: 2,
-        think: "121. sayfadaki ifadeleri not almalıyım",
-      },
-    ],
-  },
+  initialState,
   reducers: {
     addThink: (state, action) => {
       state.items.push(action.payload);

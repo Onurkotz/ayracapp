@@ -99,13 +99,8 @@ function List() {
                 key={item.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
-                  <Link
-                    className={dark === false ? "" : "darka"}
-                    to={`/think/${item.id}`}
-                  >
-                    {item.bookName}
-                  </Link>
+                <TableCell sx={tableCellsx} component="th" scope="row">
+                  {item.bookName}
                 </TableCell>
 
                 <TableCell sx={tableCellsx} align="left">
@@ -137,3 +132,17 @@ function List() {
 }
 
 export default List;
+
+/*
+
+
+
+
+<Link
+                    className={dark === false ? "" : "darka"}
+                    to={`/think/${item.id}`}
+                  >
+
+</Link>
+
+*/

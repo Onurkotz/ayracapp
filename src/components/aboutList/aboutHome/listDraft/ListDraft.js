@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteThink } from "../../../../redux/aboutSlice/aboutSlice";
 import { bookSelectors } from "../../../../redux/listSlice/listSlice";
+import { aboutSelectors } from "../../../../redux/aboutSlice/aboutSlice";
 
 import { useParams } from "react-router-dom";
 
@@ -10,14 +11,11 @@ import "./list.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function ListDraft() {
-  const items = useSelector((state) => state.bookList.items);
+  //const { id } = useParams();
+
+  const items = useSelector((state) => state.about.items);
   const dark = useSelector((state) => state.dark.checked);
   const english = useSelector((state) => state.languageMode.isEnglish);
-
-  const { id } = useParams();
-
-  const detail = useSelector((state) => bookSelectors.selectById(state, id));
-  console.log(detail)
 
   const dispatch = useDispatch();
 
@@ -32,7 +30,7 @@ function ListDraft() {
       <ol className={dark === false ? "" : "darkol"}>
         {items.map((item) => (
           <li key={item.id}>
-            {item.comments.id}
+            {item.think}
             <span>
               <DeleteIcon
                 sx={dark === false ? { color: "red" } : { color: "purple" }}
@@ -51,7 +49,20 @@ export default ListDraft;
 
 /* 
 
-
+<ol className={dark === false ? "" : "darkol"}>
+        {items.map((item) => (
+          <li key={item.id}>
+            {item.bookName}
+            <span>
+              <DeleteIcon
+                sx={dark === false ? { color: "red" } : { color: "purple" }}
+                className="delete"
+                onClick={() => handleDelete(item.id)}
+              />
+            </span>
+          </li>
+        ))}
+      </ol>
 
 
       */
