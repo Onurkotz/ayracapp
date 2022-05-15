@@ -3,7 +3,7 @@ import "./list.css";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteItem } from "../../../redux/listSlice/listSlice";
 
-import ProgressBar from "./progressbar/ProgressBar";
+import ProgressBar from "./progressbar/Progress";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -13,7 +13,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 function List() {
   const darkMode = {
@@ -85,9 +85,9 @@ function List() {
               <TableCell sx={tableHeadCellsx} align="center">
                 {english === false ? "Sayfa Sayısı" : "Pages"}
               </TableCell>
-              <TableCell sx={tableHeadCellsx} align="right">
+              {/* <TableCell sx={tableHeadCellsx} align="right">
                 {english === false ? "İlerleme Durumu" : "Progress Status"}
-              </TableCell>
+              </TableCell> */}
               <TableCell sx={tableHeadCellsx} align="right">
                 {english === false ? "Sil" : "Delete"}
               </TableCell>
@@ -112,9 +112,9 @@ function List() {
                 <TableCell sx={tableCellsx} align="center">
                   {item.page}
                 </TableCell>
-                <TableCell align="right">
-                  <ProgressBar readed="165" page={item.page} />
-                </TableCell>
+                {/* <TableCell align="right">
+                  <ProgressBar readed={15} page={650} />
+                </TableCell> */}
                 <TableCell align="right">
                   <DeleteIcon
                     sx={dark === false ? { color: "red" } : { color: "purple" }}

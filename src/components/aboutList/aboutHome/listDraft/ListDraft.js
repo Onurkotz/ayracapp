@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteThink } from "../../../../redux/aboutSlice/aboutSlice";
-import { bookSelectors } from "../../../../redux/listSlice/listSlice";
-import { aboutSelectors } from "../../../../redux/aboutSlice/aboutSlice";
+// import { bookSelectors } from "../../../../redux/listSlice/listSlice";
+// import { aboutSelectors } from "../../../../redux/aboutSlice/aboutSlice";
 
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 import "./list.css";
 

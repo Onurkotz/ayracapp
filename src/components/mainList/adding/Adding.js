@@ -17,8 +17,6 @@ function Adding() {
   const [author, setAuthor] = useState("");
   const [page, setPage] = useState("");
   const [genre, setGenre] = useState("");
-  const [comments, setComments] = useState();
-  const [comment] = useState("");
 
   const dark = useSelector((state) => state.dark.checked);
   const english = useSelector((state) => state.languageMode.isEnglish);
@@ -49,7 +47,7 @@ function Adding() {
       return false;
     }
 
-    dispatch(addList({ id: nanoid(), bookName, author, page, genre, comments: [{id: nanoid(), comment}] }));
+    dispatch(addList({ id: nanoid(), bookName, author, page, genre }));
     space();
   };
 
