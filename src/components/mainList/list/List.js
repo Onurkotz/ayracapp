@@ -46,10 +46,12 @@ function List() {
             ? {
                 margin: "10px 0px 10px 0px",
                 backgroundColor: "rgb(230, 230, 230)",
+                maxHeight: 245,
               }
             : {
                 margin: "10px 0px 10px 0px",
                 backgroundColor: "rgb(110, 110, 110)",
+                maxHeight: 245,
               }
         }
       >

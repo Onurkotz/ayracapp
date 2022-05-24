@@ -5,9 +5,10 @@ import "./footer.css";
 
 function Footers() {
   const english = useSelector((state) => state.languageMode.isEnglish);
+  const dark = useSelector((state) => state.dark.checked);
 
   return (
-    <div className="footerBack">
+    <div className={dark === false ? "footerBack" : "footerBackDark"}>
       <div className="footerMid">
         <footer style={{ textAlign: "center" }}>
           {english === false

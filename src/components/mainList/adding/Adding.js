@@ -11,13 +11,11 @@ import Filter4Icon from "@mui/icons-material/Filter4";
 import Input from "@mui/material/Input";
 import InputAdornment from "@mui/material/InputAdornment";
 
-
-
 function Adding() {
   const dispatch = useDispatch();
   const [bookName, setBookName] = useState("");
   const [author, setAuthor] = useState("");
-  const [page, setPage] = useState("");
+  const [page, setPage] = useState();
   const [genre, setGenre] = useState("");
 
   const dark = useSelector((state) => state.dark.checked);
@@ -38,11 +36,21 @@ function Adding() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (bookName === "" || author === "" || page === "" || genre === "") {
+    if (bookName === "" || author === "" || genre === "") {
       alert(
         english === false
           ? "Girişler boş bırakılamaz."
           : "The inputs could not be empty."
+      );
+
+      space();
+
+      return false;
+    } else if (page !== "") {
+      alert(
+        english === false
+          ? "Sayfa sayısı rakamlardan oluşmalı."
+          : "Page number must be all digit."
       );
       space();
 
