@@ -3,7 +3,7 @@ import "./list.css";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteItem } from "../../../redux/listSlice/listSlice";
 
-import ProgressBar from "./progressbar/Progress";
+//import ProgressBar from "./progressbar/Progress";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
