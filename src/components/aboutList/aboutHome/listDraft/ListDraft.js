@@ -30,7 +30,7 @@ function ListDraft() {
       <ol className={dark === false ? "" : "darkol"}>
         {items.map((item) => (
           <li key={item.id}>
-            {item.think}
+            {item.think.charAt(0).toUpperCase() + item.think.slice(1)}
             <span>
               <DeleteIcon
                 sx={dark === false ? { color: "red" } : { color: "purple" }}

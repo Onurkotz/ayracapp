@@ -27,7 +27,7 @@ function Total() {
       <Link className={className} to="/myGoals">
         {english === false
           ? "Okumak İstediklerim"
-          : "Books That I Want To Read"}
+          : "I Want To Read"}
       </Link>
 
       <FormatListNumberedIcon

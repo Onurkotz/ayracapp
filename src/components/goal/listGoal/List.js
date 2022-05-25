@@ -92,11 +92,13 @@ function List() {
                 </TableCell>
 
                 <TableCell sx={tableCellMapsx} align="left">
-                  {item.goalAuthor.charAt(0).toUpperCase() + item.goalAuthor.slice(1)}
+                  {item.goalAuthor.charAt(0).toUpperCase() +
+                    item.goalAuthor.slice(1)}
                 </TableCell>
 
                 <TableCell sx={tableCellMapsx} align="right">
                   <DeleteIcon
+                    sx={dark === false ? { color: "red" } : { color: "purple" }}
                     className="delete"
                     onClick={() => deleteBook(item.id)}
                   />
