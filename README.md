@@ -8,7 +8,7 @@ Bu uygulama ile elinizdeki kitapların bir listesini tutabilirsiniz. “Okumak �
 
 Bu uygulama için Açık-Karanlık Mod ve Türkçe-İngilizce desteği vardır. İstediğiniz şekilde kullanabilirsiniz.
 
-Girdilerin ve butonların üzerine geldiğinizde sizi sevimli bir kalem ve kiltaplar karşılayacak. 
+Girdilerin ve butonların üzerine geldiğinizde sizi sevimli bir kalem ve kiltaplar karşılayacak.
 
 \-
 
@@ -22,15 +22,18 @@ When you hover over the inputs and buttons, a cute pen and books will meet you.
 
 ### Açık ve Karanlık Mod İçin Örnek Ekran Alıntıları   ||   Example Screenshots For Light and Dark Mode
 
- **Açık Mod   ||   Light Mode                                                                                                                           Karanlık Mod   ||   Dark Mode** 
+**Açık Mod   ||   Light Mode**
 
-![LightMode](./src/Assets/ligthmode.png)                           ![DarkMode](./src/Assets/darkmode.png)
+![LightMode](./src/Assets/ligthmode.png)
+
+**Karanlık Mod   ||   Dark Mode**
+![DarkMode](./src/Assets/darkmode.png)
 
 ---
 
 ### İngilizce Dil Desteği İçin Örnek Ekran Alıntısı   ||   Example Screenshot For English Language Support
 
- **İngilizce   ||   English**
+**İngilizce   ||   English**
 
 ![English](./src/Assets/englishmode.png)
 
@@ -38,13 +41,16 @@ When you hover over the inputs and buttons, a cute pen and books will meet you.
 
 ### Hedef Kitap Listesi ve Not Defteri İçin Örnek Ekran Görüntüleri   ||   Example Screenshots For Target Book List and  Notebook
 
- **Hedef Kitap Listesi   ||   Target Book List** 
+**Hedef Kitap Listesi   ||   Target Book List**
 
 ![TagetList](./src/Assets/goal.png)
 
- **Not Defteri Açık Mod   ||   Notebook Ligth Mode                                                                            Not Defteri Karanlık Mod   ||   Notebook Dark Mode**
+**Not Defteri Açık Mod   ||   Notebook Ligth Mode**
 
-**![NotebookLight](./src/Assets/notebook.png)**                          ![NotebookDark](./src/Assets/notebookdarkmode.png)
+**![NotebookLight](./src/Assets/notebook.png)**
+
+**Not Defteri Karanlık Mod   ||   Notebook Dark Mode**
+![NotebookDark](./src/Assets/notebookdarkmode.png)
 
 ---
 
@@ -54,7 +60,7 @@ When you hover over the inputs and buttons, a cute pen and books will meet you.
 
 ### Geliştirme Materyalleri   ||   Development Materials
 
-Bu uygulama geliştirilirken React JS kütüphanesi kullanılmıştır. 
+Bu uygulama geliştirilirken React JS kütüphanesi kullanılmıştır.
 
 \-
 
@@ -105,6 +111,14 @@ Country flags have been placed next to the switch instead of text for Light and 
 ```plaintext
 npm i react-country-flag
 ```
+
+---
+
+#### Bu uygulama içinde güncellemeler ve yeni özellikler üzerinde çalışılmaktadır.
+
+#### \-
+
+#### Working on updates and new features for this app.
 
 ---
 
