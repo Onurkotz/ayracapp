@@ -46,12 +46,12 @@ function List() {
             ? {
                 margin: "10px 0px 10px 0px",
                 backgroundColor: "rgb(230, 230, 230)",
-                maxHeight: 245,
+                maxHeight: 300,
               }
             : {
                 margin: "10px 0px 10px 0px",
                 backgroundColor: "rgb(110, 110, 110)",
-                maxHeight: 245,
+                maxHeight: 300,
               }
         }
       >
@@ -102,14 +102,14 @@ function List() {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell sx={tableCellsx} component="th" scope="row">
-                  {item.bookName}
+                  {item.bookName.toUpperCase()}
                 </TableCell>
 
                 <TableCell sx={tableCellsx} align="left">
-                  {item.author}
+                  {item.author.charAt(0).toUpperCase() + item.author.slice(1)}
                 </TableCell>
                 <TableCell sx={tableCellsx} align="center">
-                  {item.genre}
+                  {item.genre.charAt(0).toUpperCase() + item.genre.slice(1)}
                 </TableCell>
                 <TableCell sx={tableCellsx} align="center">
                   {item.page}

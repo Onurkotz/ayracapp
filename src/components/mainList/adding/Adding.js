@@ -15,7 +15,7 @@ function Adding() {
   const dispatch = useDispatch();
   const [bookName, setBookName] = useState("");
   const [author, setAuthor] = useState("");
-  const [page, setPage] = useState();
+  const [page, setPage] = useState("");
   const [genre, setGenre] = useState("");
 
   const dark = useSelector((state) => state.dark.checked);
@@ -36,22 +36,13 @@ function Adding() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (bookName === "" || author === "" || genre === "") {
+    if (bookName === "" || author === "" || genre === "" || page === "") {
       alert(
         english === false
           ? "Girişler boş bırakılamaz."
           : "The inputs could not be empty."
       );
 
-      space();
-
-      return false;
-    } else if (page !== "") {
-      alert(
-        english === false
-          ? "Sayfa sayısı rakamlardan oluşmalı."
-          : "Page number must be all digit."
-      );
       space();
 
       return false;

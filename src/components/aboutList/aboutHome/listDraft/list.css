@@ -3,7 +3,10 @@
 }
 
 ol {
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(230, 230, 230); 
+  overflow: auto;
+  overflow-x: hidden;
+  height: 268px;
 }
 
 li {
@@ -20,3 +23,4 @@ span {
 .darkol {
   background-color: rgb(110, 110, 110);
 }
+

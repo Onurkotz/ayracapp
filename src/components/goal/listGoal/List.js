@@ -41,10 +41,12 @@ function List() {
             ? {
                 margin: "10px 0px 10px 0px",
                 backgroundColor: "rgb(230, 230, 230)",
+                maxHeight: 300,
               }
             : {
                 margin: "10px 0px 10px 0px",
                 backgroundColor: "rgb(110, 110, 110)",
+                maxHeight: 300,
               }
         }
       >
@@ -86,11 +88,11 @@ function List() {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell sx={tableCellMapsx} component="th" scope="row">
-                  {item.goalName}
+                  {item.goalName.toUpperCase()}
                 </TableCell>
 
                 <TableCell sx={tableCellMapsx} align="left">
-                  {item.goalAuthor}
+                  {item.goalAuthor.charAt(0).toUpperCase() + item.goalAuthor.slice(1)}
                 </TableCell>
 
                 <TableCell sx={tableCellMapsx} align="right">
